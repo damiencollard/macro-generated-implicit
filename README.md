@@ -1,4 +1,4 @@
-## Scala macro-generated implicit in companion object.
+## Insert macro-generated implicit in companion object.
 
 This project defines an annotation macro, ``MakeMeta``, which
 generates an implicit object extending ``Meta[C]`` within the
