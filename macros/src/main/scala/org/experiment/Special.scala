@@ -32,8 +32,7 @@ object SpecialMacro {
 
     val inputs = annottees.map(_.tree).toList
     val expandees = inputs match {
-      case (klass @ ClassDef(mods, name, tparams, template @ Template(parents, self, body))) :: rest =>
-        val companion @ ModuleDef(_, _, _) = rest.head
+      case (klass @ ClassDef(_, _, _, _)) :: (companion @ ModuleDef(_, _, _)) :: Nil =>
         klass :: augmentCompanion(companion) :: Nil
       case _ =>
         c.abort(c.enclosingPosition, "not applicable")
