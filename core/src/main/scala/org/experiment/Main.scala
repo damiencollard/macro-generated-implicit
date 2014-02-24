@@ -9,6 +9,7 @@ object Dummy {
 
 object Main {
   def main(args: Array[String]) {
+    Dummy.meta.info
     implicitly[Meta[Dummy]].info
   }
 }
