@@ -25,7 +25,7 @@ case class, I'd rather use an annotation macro for three reasons:
 
  2. The annotation macro offers control as to when/where the implicit
     instance is created, which the implicit macro does not: compilation
-    of the annotated instance vs any location where the implicit is
+    of the annotated instance *vs* any location where the implicit is
     looked up.
 
  3. The annotation macro in the actual project is more complex and
