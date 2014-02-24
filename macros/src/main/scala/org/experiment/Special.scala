@@ -3,15 +3,15 @@ package org.experiment
 import scala.reflect.macros.Context
 import scala.annotation.StaticAnnotation
 
-class Special extends StaticAnnotation {
-  def macroTransform(annottees: Any*) = macro SpecialMacro.impl
-}
-
 abstract class Meta[T] {
   def info: String
 }
 
-object SpecialMacro {
+class MakeMeta extends StaticAnnotation {
+  def macroTransform(annottees: Any*) = macro MakeMetaMacro.impl
+}
+
+object MakeMetaMacro {
   def impl(c: Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
     import c.universe._
 

@@ -1,6 +1,6 @@
 package org.experiment
 
-@Special
+@MakeMeta
 case class Dummy(s: String)
 
 object Dummy {
